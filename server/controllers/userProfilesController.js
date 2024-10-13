@@ -1,8 +1,8 @@
-const axios = require("axios");
+import axios from "axios";
 
 const USER_PROFILES_API_URL = "http://localhost:8000/userProfiles";
 
-const getUserProfileById = async function (req, res, next) {
+export const getUserProfileById = async function (req, res, next) {
   console.log("userPosts", req.params.userId);
   const id = req.params.userId;
   if (!id) {
@@ -21,7 +21,7 @@ const getUserProfileById = async function (req, res, next) {
   }
 };
 
-const getUserProfiles = async function (req, res, next) {
+export const getUserProfiles = async function (req, res, next) {
   try {
     const response = await axios.get(USER_PROFILES_API_URL);
     const userProfiles = response.data;
@@ -34,7 +34,7 @@ const getUserProfiles = async function (req, res, next) {
   }
 };
 
-const putUserProfileById = async function (req, res, next) {
+export const putUserProfileById = async function (req, res, next) {
   const id = req.params.userId;
   if (!id) {
     return res.status(400).send("Id is required");
@@ -51,5 +51,3 @@ const putUserProfileById = async function (req, res, next) {
     next(error);
   }
 };
-
-module.exports = { getUserProfileById, putUserProfileById, getUserProfiles };

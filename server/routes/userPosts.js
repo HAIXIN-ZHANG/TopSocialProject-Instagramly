@@ -1,11 +1,12 @@
-const express = require("express");
-const {
-  getUserPostById,
+import express from "express";
+
+import {
   getUserPosts,
+  getUserPostById,
   postUserPost,
-  deleteUserPostById,
   putUserPost,
-} = require("../controllers/userPostsController");
+  deleteUserPostById,
+} from "../controllers/userPostsController.js";
 
 const userPostsRouter = express.Router();
 
@@ -24,4 +25,4 @@ userPostsRouter.put("/:post_id", putUserPost);
 //DELETE delete a user post by id  /api/userPosts/:post_id
 userPostsRouter.delete("/:post_id", deleteUserPostById);
 
-module.exports = userPostsRouter;
+export default userPostsRouter;

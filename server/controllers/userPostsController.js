@@ -1,8 +1,8 @@
-const axios = require("axios");
+import axios from "axios";
 
 const USER_POSTS_API_URL = "http://localhost:8000/userPosts";
 
-const getUserPosts = async function (req, res, next) {
+export const getUserPosts = async function (req, res, next) {
   try {
     const response = await axios.get(USER_POSTS_API_URL);
     const userPosts = response.data;
@@ -15,7 +15,7 @@ const getUserPosts = async function (req, res, next) {
   }
 };
 
-const getUserPostById = async function (req, res, next) {
+export const getUserPostById = async function (req, res, next) {
   const id = req.params.post_id;
   if (!id) {
     return res.status(400).send("Id is required");
@@ -37,7 +37,7 @@ const getUserPostById = async function (req, res, next) {
   }
 };
 
-const postUserPost = async function (req, res, next) {
+export const postUserPost = async function (req, res, next) {
   const newUserPost = req.body;
   if (isEmpty(newUserPost)) {
     return res.status(400).send("UserPost is required");
@@ -54,7 +54,7 @@ const postUserPost = async function (req, res, next) {
   }
 };
 
-const deleteUserPostById = async function (req, res, next) {
+export const deleteUserPostById = async function (req, res, next) {
   const id = req.params.post_id;
   if (!id) {
     return res.status(400).send("Id is required");
@@ -69,7 +69,7 @@ const deleteUserPostById = async function (req, res, next) {
   }
 };
 
-const putUserPost = async function (req, res, next) {
+export const putUserPost = async function (req, res, next) {
   const id = req.params.post_id;
   if (!id) {
     return res.status(400).send("Id is required");
@@ -85,12 +85,4 @@ const putUserPost = async function (req, res, next) {
   } catch (error) {
     next(error);
   }
-};
-
-module.exports = {
-  getUserPostById,
-  getUserPosts,
-  postUserPost,
-  deleteUserPostById,
-  putUserPost,
 };

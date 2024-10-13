@@ -1,10 +1,10 @@
-const express = require("express");
+import express from "express";
 
-const {
+import {
   getUserProfileById,
-  putUserProfileById,
   getUserProfiles,
-} = require("../controllers/userProfilesController");
+  putUserProfileById,
+} from "../controllers/userProfilesController.js";
 
 const userProfilesRouter = express.Router();
 
@@ -17,4 +17,4 @@ userProfilesRouter.get("/", getUserProfiles);
 //PUT update UserProfile by id   /api/userProfiles/:userId
 userProfilesRouter.put("/:userId", putUserProfileById);
 
-module.exports = userProfilesRouter;
+export default userProfilesRouter;
