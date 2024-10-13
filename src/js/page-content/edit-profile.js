@@ -9,19 +9,19 @@ export const bindEditProfile = async () => {
   // 点击按钮时显示弹窗并填充数据
   btn.addEventListener("click", function () {
     // 获取侧边栏中的信息
-    const profileName = document.querySelector(".profile-name").textContent;
-    const profileEmail = document.querySelector(".profile-email").textContent;
-    const profileDescription = document.querySelector(
-      ".profile-description",
+    const profileName = document.getElementById("profile-name").textContent;
+    const profileEmail = document.getElementById("profile-email").textContent;
+    const profileDescription = document.getElementById(
+      "profile-description",
     ).textContent;
-    const constellation = document.querySelector(
-      ".profile-constellation",
+    const constellation = document.getElementById(
+      "profile-constellation",
     ).textContent;
-    const mbti = document.querySelector(".profile-mbti").textContent;
-    const hobby = document.querySelector(".profile-hobby").textContent;
-    const linked = document.querySelector(".profile-linked").textContent;
-    const x = document.querySelector(".profile-x").textContent;
-    const weChat = document.querySelector(".profile-weChat").textContent;
+    const mbti = document.getElementById("profile-mbti").textContent;
+    const hobby = document.getElementById("profile-hobby").textContent;
+    const linked = document.getElementById("profile-linked").textContent;
+    const x = document.getElementById("profile-x").textContent;
+    const weChat = document.getElementById("profile-weChat").textContent;
 
     console.log(
       "Print all data",
@@ -35,7 +35,7 @@ export const bindEditProfile = async () => {
       weChat,
       profileDescription,
     );
-    // 将侧边栏中的信息填入弹窗表单
+    // // 将侧边栏中的信息填入弹窗表单
     document.getElementById("name").value = profileName;
     document.getElementById("email").value = profileEmail;
     document.getElementById("constellation").value = constellation;

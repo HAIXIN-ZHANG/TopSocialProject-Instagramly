@@ -25,8 +25,8 @@ export const bindEditPost = async () => {
   // });
 
   // 点击取消按钮时隐藏弹窗
-  const cancelButton = document.getElementById("post-cancel"); // 假设你有一个取消按钮
-  cancelButton.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
+  // const cancelButton = document.getElementById("post-cancel"); // 假设你有一个取消按钮
+  // cancelButton.addEventListener("click", function () {
+  //   modal.style.display = "none";
+  // });
 };

@@ -105,7 +105,7 @@
   color: var(--color-white);
 }
 
-button {
+.btn-profile {
   width: 100%;
   /* 按钮宽度 */
   padding: 10px;
@@ -125,7 +125,11 @@ button {
   /* 按钮字体大小 */
 }
 
-button:hover {
+.btn-profile:hover {
   opacity: 0.8;
   /* 按钮悬停透明度 */
+}
+
+.btn-edit-profile:hover {
+  color: var(--color-text);
 }
