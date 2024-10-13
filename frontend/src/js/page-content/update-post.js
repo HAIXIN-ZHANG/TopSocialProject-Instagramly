@@ -18,11 +18,11 @@ export const bindEditPost = async () => {
   });
 
   // 点击保存按钮时隐藏弹窗（可以在这里添加保存逻辑）
-  const saveButton = document.getElementById("post-save"); // 假设你有一个保存按钮
-  saveButton.addEventListener("click", function () {
-    // 这里可以添加保存逻辑
-    modal.style.display = "none";
-  });
+  // const saveButton = document.getElementById("post-save"); // 假设你有一个保存按钮
+  // saveButton.addEventListener("click", function () {
+  //   // 这里可以添加保存逻辑
+  //   modal.style.display = "none";
+  // });
 
   // 点击取消按钮时隐藏弹窗
   const cancelButton = document.getElementById("post-cancel"); // 假设你有一个取消按钮
