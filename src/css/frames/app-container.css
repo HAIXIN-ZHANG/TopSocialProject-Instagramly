@@ -1,7 +1,5 @@
 .app-container {
-  border: 1px solid #000;
   text-align: center;
-
   width: 1440px;
   min-height: 100vh;
   box-sizing: border-box;
