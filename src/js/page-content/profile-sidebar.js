@@ -1,4 +1,4 @@
-import { getProfiles } from "../database/database";
+import { getProfiles } from "../database/database.js";
 
 // 获取 HTML 元素
 const avatarElement = document.getElementById("profile-avatar");

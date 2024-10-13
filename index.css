@@ -1,5 +1,9 @@
 @import "normalize.css";
 
+/* --- Component --- */
+@import "./src/css/components/button.css";
+@import "./src/css/components/common-modal.css";
+
 /* --- Foundation --- */
 @import "./src/css/foundation/common.css";
 
@@ -8,7 +12,9 @@
 @import "./src/css/frames/profile-sidebar.css";
 @import "./src/css/frames/main-content.css";
 @import "./src/css/frames/advertisement-sidebar.css";
+
 @import "./src/css/frames/profile-modal.css";
+@import "./src/css/frames/post-modal.css";
 
 /* --- Components --- */
 

@@ -1,0 +1,40 @@
+.post-modal {
+  height: 537px;
+}
+
+.post-modal-description {
+  height: 116px;
+  border: solid 1px var(--color-border);
+  border-radius: var(--common-border-radius);
+  margin: 24px 0;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.post-modal-description input {
+  width: 100%;
+  margin-top: 6px;
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+  border: none;
+  font-weight: 500;
+  line-height: 14px;
+  overflow: hidden;
+}
+
+.post-modal-picture {
+  height: 253px;
+  border: solid 1px var(--color-border);
+  border-radius: var(--common-border-radius);
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.post-modal-picture input {
+  width: 100%;
+  margin-top: 6px;
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+  border: none;
+  font-weight: 500;
+}

@@ -32,23 +32,26 @@
     {
       "id": 1,
       "user": "Sam Li",
-      "image": "path/to/image1.jpg",
+      "avatar": "/public/image/profile/profile_3.png",
+      "image": "public/image/post-image/post-image1.jpg",
       "content": "Damn, The people of our country are really amazing. I feel both heartbroken and amused for him. This TV series is really good, highly recommended.",
-      "timestamp": "2024-07-22T10:30:00"
+      "timestamp": "2024-07-22 10:30:00"
     },
     {
       "id": 2,
       "user": "Sam Li",
-      "image": "path/to/image2.jpg",
+      "avatar": "/public/image/profile/profile_3.png",
+      "image": "public/image/post-image/post-image2.jpg",
       "content": "Just visited a beautiful place today. The architecture and scenery were breathtaking!",
-      "timestamp": "2024-08-05T14:15:00"
+      "timestamp": "2024-08-05 14:15:00"
     },
     {
       "id": 3,
       "user": "Sam Li",
-      "image": "path/to/image3.jpg",
+      "avatar": "/public/image/profile/profile_4.png",
+      "image": "public/image/post-image/post-image1.jpg",
       "content": "Had a great day out with friends. We laughed so much and made some wonderful memories!",
-      "timestamp": "2024-09-10T16:00:00"
+      "timestamp": "2024-09-10 16:00:00"
     }
   ]
 }

@@ -2,6 +2,8 @@ export const bindEditPost = async () => {
   // 获取 HTML 元素
   const modal = document.getElementById("edit-post-modal");
   const btn = document.getElementById("edit-post-btn");
+  const cancel = document.getElementById("edit-post-cancel");
+  const post = document.getElementById("edit-post-post");
   const close = document.getElementById("edit-post-close");
   const postTextInput = document.getElementById("post-text");
   const postImageInput = document.getElementById("post-image");
@@ -25,8 +27,12 @@ export const bindEditPost = async () => {
   // });
 
   // 点击取消按钮时隐藏弹窗
-  // const cancelButton = document.getElementById("post-cancel"); // 假设你有一个取消按钮
-  // cancelButton.addEventListener("click", function () {
-  //   modal.style.display = "none";
-  // });
+  cancel.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // 点击编辑按钮时显示弹窗并填充数据
+  post.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
 };
