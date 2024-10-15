@@ -5,7 +5,8 @@
 
   width: 284px;
   height: 900px;
-  padding: 0 0 0 24px;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .web-logo {
@@ -54,6 +55,7 @@
 .profile-email {
   font-size: var(--font-size-xsmall);
   color: var(--color-text-light);
+  line-height: 12px;
   margin: 0;
 }
 

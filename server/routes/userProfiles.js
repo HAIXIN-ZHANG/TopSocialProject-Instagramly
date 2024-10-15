@@ -3,7 +3,7 @@ import express from "express";
 import {
   getUserProfileById,
   getUserProfiles,
-  putUserProfileById,
+  patchUserProfileById,
 } from "../controllers/userProfilesController.js";
 
 const userProfilesRouter = express.Router();
@@ -14,7 +14,7 @@ userProfilesRouter.get("/:userId", getUserProfileById);
 //GET get UserProfiles   /api/userProfiles
 userProfilesRouter.get("/", getUserProfiles);
 
-//PUT update UserProfile by id   /api/userProfiles/:userId
-userProfilesRouter.put("/:userId", putUserProfileById);
+//PATCH update UserProfile by id   /api/userProfiles/:userId
+userProfilesRouter.patch("/:userId", patchUserProfileById);
 
 export default userProfilesRouter;

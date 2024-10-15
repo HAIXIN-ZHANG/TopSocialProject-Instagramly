@@ -34,14 +34,15 @@ export const getUserProfiles = async function (req, res, next) {
   }
 };
 
-export const putUserProfileById = async function (req, res, next) {
+export const patchUserProfileById = async function (req, res, next) {
   const id = req.params.userId;
   if (!id) {
     return res.status(400).send("Id is required");
   }
   const updatedUserProfile = req.body;
+  console.log("updatedUserProfile backend", updatedUserProfile);
   try {
-    await axios.put(`${USER_PROFILES_API_URL}/${id}`, updatedUserProfile, {
+    await axios.patch(`${USER_PROFILES_API_URL}/${id}`, updatedUserProfile, {
       headers: { "Content-Type": "application/json" },
     });
     res.status(200).json({

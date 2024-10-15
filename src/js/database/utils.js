@@ -32,8 +32,20 @@ export const putData = async (path, data) => {
 };
 
 export const deleteData = async (path) => {
+  console.log("deleteData", path);
   try {
     await axios.delete(path);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const patchData = async (path, data) => {
+  try {
+    const response = await axios.patch(path, data, {
+      headers: { "Content-Type": "application/json" },
+    });
+    return response.data;
   } catch (error) {
     throw error;
   }

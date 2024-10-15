@@ -27,3 +27,8 @@ button:hover {
   opacity: 0.8;
   /* Change opacity on hover */
 }
+
+.btn-modal-warning {
+  background-color: var(--color-warning);
+  color: var(--color-white);
+}

@@ -1,4 +1,5 @@
-import { getPosts } from "../database/database.js";
+import { getPosts, deletePost } from "../database/database.js";
+
 // 获取容器
 const postsContainer = document.getElementById("posts-container");
 
@@ -17,8 +18,8 @@ export const refreshPostData = async () => {
                             <span class="post-user">${post.user}</span>
                         </div>
                         <div class="post-buttons">
-                            <img src="public/image/icon/icon-edit.png" alt="edit post button">
-                            <img src="public/image/icon/icon-remove.png" alt="remove post button">
+                            <img class="post-edit-btn" src="public/image/icon/icon-edit.png" alt="edit post button"  data-post-id=${post.id}>
+                            <img class="post-remove-btn" src="public/image/icon/icon-close.png" alt="remove post button" data-post-id=${post.id}>
                         </div>
                     </div>
                     <div class="post-content">
@@ -33,4 +34,44 @@ export const refreshPostData = async () => {
       postsContainer.innerHTML += postHTML;
     });
   }
+};
+
+export const bindContentCardButtons = async () => {
+  const editPostButton = document.querySelectorAll(".post-edit-btn");
+  const removePostButton = document.querySelectorAll(".post-remove-btn");
+  const deletePostModal = document.getElementById("delete-post-modal");
+  // 绑定编辑按钮
+  editPostButton.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const postId = button.attributes["data-post-id"].value;
+      console.log("Edit post", postId);
+    });
+  });
+
+  // 绑定删除按钮
+  removePostButton.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const postId = button.attributes["data-post-id"].value;
+
+      deletePostModal.style.display = "flex";
+      const close = document.getElementById("delete-post-close");
+      const cancel = document.getElementById("delete-post-cancel");
+      const confirm = document.getElementById("delete-post-delete");
+
+      close.addEventListener("click", function () {
+        deletePostModal.style.display = "none";
+      });
+
+      cancel.addEventListener("click", function () {
+        deletePostModal.style.display = "none";
+      });
+
+      confirm.addEventListener("click", async () => {
+        await deletePost(postId);
+        deletePostModal.style.display = "none";
+        postsContainer.innerHTML = "";
+        await refreshPostData();
+      });
+    });
+  });
 };

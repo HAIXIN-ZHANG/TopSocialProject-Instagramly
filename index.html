@@ -150,6 +150,16 @@
           <img src="./public/image/icon/icon-close.png" alt="icon-close" />
         </span>
 
+        <div class="profile-modal-avatar" id="drop-area">
+          <label for="file-input">
+            <img id="upload-avatar" src="" alt="upload avatar" />
+          </label>
+          <div id="icon-upload">
+            <img src="./public/image/icon/icon-upload.png" alt="icon upload" />
+          </div>
+          <input type="file" id="file-input" accept="image/*" />
+        </div>
+
         <div class="profile-modal-input">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" value="" />
@@ -246,6 +256,31 @@
             type="submit"
           >
             Post
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 删除一条动态-->
+    <div id="delete-post-modal" class="modal">
+      <div class="modal-content delete-post-modal">
+        <span class="modal-content-title">Delete Post</span>
+        <span class="close" id="delete-post-close">
+          <img src="./public/image/icon/icon-close.png" alt="icon-close" />
+        </span>
+
+        <p class="delete-post-description">Are you sure to delete this post?</p>
+
+        <div class="btn-modal-container">
+          <button class="btn-modal btn-modal-secondary" id="delete-post-cancel">
+            Cancel
+          </button>
+          <button
+            class="btn-modal btn-modal-warning"
+            id="delete-post-delete"
+            type="submit"
+          >
+            Delete
           </button>
         </div>
       </div>

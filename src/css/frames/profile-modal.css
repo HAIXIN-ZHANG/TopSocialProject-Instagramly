@@ -68,3 +68,33 @@
   border: none;
   overflow: scroll;
 }
+
+.profile-modal-avatar {
+  text-align: center;
+}
+
+#upload-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+#icon-upload {
+  position: fixed;
+  top: 60px;
+  left: 225px;
+  background-color: rgba(0, 0, 0, 0.45);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+#icon-upload img {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 11px;
+}
+#file-input {
+  display: none; /* 隐藏文件输入框 */
+}

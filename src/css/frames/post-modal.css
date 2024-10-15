@@ -38,3 +38,14 @@
   border: none;
   font-weight: 500;
 }
+
+/* delete-post-modal */
+.delete-post-modal {
+  height: 148px;
+}
+
+.delete-post-description {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  margin: 20px 0 0 0;
+}
