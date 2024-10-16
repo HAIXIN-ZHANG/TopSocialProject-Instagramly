@@ -1,4 +1,4 @@
-import { putProfile, updateProfiles } from "../database/database.js";
+import { updateProfiles } from "../database/database.js";
 import { refreshProfileSidebarData } from "./profile-sidebar.js";
 import { convertToBase64 } from "../base64Utils.js";
 

@@ -46,11 +46,6 @@ export const updateProfiles = async (profileData) => {
   return userProfiles.data;
 };
 
-export const putProfile = async (id, updatedProfile) => {
-  const profilesPath = getResourcePath(["userProfiles", id]);
-  await putData(profilesPath, updatedProfile);
-};
-
 export const deletePost = async (id, updatedPost) => {
   const postsPath = getResourcePath(["userPosts", id]);
   await deleteData(postsPath, updatedPost);

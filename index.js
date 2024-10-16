@@ -18,6 +18,6 @@ bindEditPost();
 bindUploadAvatar();
 
 // main-content posts
-await refreshPostData();
+refreshPostData();
 
 bindContentCardButtons();
