@@ -10,7 +10,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin: 'http://3.24.240.140', // 允许的源
+    origin: 'http://localhost:8080', // 允许的源
   }
 ));
 app.use(express.json());
