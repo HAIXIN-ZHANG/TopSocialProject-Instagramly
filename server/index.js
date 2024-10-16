@@ -8,7 +8,9 @@ import { handleErrors } from "./middleware/errorMiddleware.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://3.24.240.140', // 允许的源
+}));
 app.use(express.json());
 
 // 增加 JSON 和 URL 编码请求体大小限制
