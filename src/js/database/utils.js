@@ -54,8 +54,8 @@ export const patchData = async (path, data) => {
 
 export const getResourcePath = (pathInfo) => {
   const dbPath =
-    import.meta.env.VITE_PROD_DB_PATH || import.meta.env.VITE_LOCAL_DB_PATH;
-  const protocol = dbPath.includes("localhost") ? "http://" : "https://";
+    import.meta.env.VITE_LOCAL_DB_PATH;
+  const protocol = "http://"
 
   return protocol + dbPath + "/api/" + path.join(...pathInfo);
 };

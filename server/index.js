@@ -8,11 +8,7 @@ import { handleErrors } from "./middleware/errorMiddleware.js";
 
 const app = express();
 
-app.use(cors(
-  {
-    origin: 'http://localhost:8080', // 允许的源
-  }
-));
+app.use(cors());
 app.use(express.json());
 
 // 增加 JSON 和 URL 编码请求体大小限制
@@ -25,5 +21,5 @@ app.use(handleErrors);
 
 const PORT = 8001;
 app.listen(PORT, function () {
-  console.log("Server is running on http://localhost:8001");
+	console.log("Server is running on http://localhost:8001");
 });
