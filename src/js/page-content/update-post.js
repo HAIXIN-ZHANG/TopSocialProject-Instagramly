@@ -35,12 +35,10 @@ export const bindEditPost = async () => {
   fileInput.addEventListener("change", (event) => {
     const files = event.target.files;
     if (files.length > 0) {
-      postImage.src = "";
+     
       console.log(`已选择文件: ${files[0].name}`); // 可以在这里处理文件
 
-      if (postId) {
-        postImage.src = URL.createObjectURL(files[0]);
-      }
+      postImage.src = URL.createObjectURL(files[0]);
 
       console.log(`postImage.src`, postImage.src);
       postImage.style.display = "block";
