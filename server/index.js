@@ -19,7 +19,7 @@ app.use("/api", router);
 //use error middleware at the end
 app.use(handleErrors);
 
-const PORT = 80;
+const PORT = 81;
 app.listen(PORT, function () {
-  console.log("Server is running on http://localhost:80");
+  console.log("Server is running on http://localhost:81");
 });
