@@ -9,15 +9,21 @@ import {
   bindContentCardButtons,
 } from "./src/js/page-content/post-content.js";
 
-// profile-sidebar
-refreshProfileSidebarData();
+async function initialize() {
+  // profile-sidebar
+  refreshProfileSidebarData();
 
-// edit-profile modal
-bindEditProfile();
-bindEditPost();
-bindUploadAvatar();
+  // edit-profile modal
+  bindEditProfile();
+  bindEditPost();
+  bindUploadAvatar();
 
-// main-content posts
-refreshPostData();
+  // main-content posts
 
-bindContentCardButtons();
+  await refreshPostData();
+
+  bindContentCardButtons();
+}
+
+// Call the async function to execute the code
+initialize();
