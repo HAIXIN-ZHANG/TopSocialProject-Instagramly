@@ -1,5 +1,6 @@
 import { putProfile, updateProfiles } from "../database/database.js";
 import { refreshProfileSidebarData } from "./profile-sidebar.js";
+import { convertToBase64 } from "../base64Utils.js";
 
 export const bindEditProfile = async () => {
   // 获取 HTML 元素
@@ -65,7 +66,7 @@ export const bindEditProfile = async () => {
     modal.style.display = "none";
 
     // 获取表单中的信息
-
+    const avatarInput = document.getElementById("file-input");
     const profileName = document.getElementById("name").value;
     const profileEmail = document.getElementById("email").value;
     const profileDescription = document.getElementById(
@@ -91,7 +92,7 @@ export const bindEditProfile = async () => {
       profileDescription,
     );
 
-    await updateProfiles({
+    let updatedProfile = {
       name: profileName,
       email: profileEmail,
       description: profileDescription,
@@ -101,7 +102,17 @@ export const bindEditProfile = async () => {
       linked: linked,
       x: x,
       wechat: weChat,
-    });
+    };
+
+    // 上传头像
+    const file = avatarInput.files[0];
+    if (file) {
+      const avatarBase64String = await convertToBase64(file);
+      console.log("avatarBase64String", avatarBase64String);
+      updatedProfile = { ...updatedProfile, avatar: avatarBase64String };
+    }
+
+    await updateProfiles(updatedProfile);
 
     await refreshProfileSidebarData();
   });
@@ -115,29 +126,18 @@ export const bindEditProfile = async () => {
 export const bindUploadAvatar = () => {
   const dropArea = document.getElementById("drop-area");
   const fileInput = document.getElementById("file-input");
+  const uploadAvatar = document.getElementById("upload-avatar");
 
   // 点击图标区域时触发文件选择
   dropArea.addEventListener("click", () => {
     fileInput.click();
-  });
-  // 拖放事件处理
-  dropArea.addEventListener("dragover", (event) => {
-    event.preventDefault(); // 防止默认事件
   });
 
   fileInput.addEventListener("change", (event) => {
     const files = event.target.files;
     if (files.length > 0) {
       console.log(`已选择文件: ${files[0].name}`); // 可以在这里处理文件
-      uploadFile(files[0]); // 上传文件
+      uploadAvatar.src = URL.createObjectURL(files[0]);
     }
   });
-};
-
-const uploadFile = (file) => {
-  const formData = new FormData();
-  formData.append("file", file); // 将文件添加到表单数据
-
-  // 发送 POST 请求上传文件
-  putProfile(1, { avatar: formData });
 };

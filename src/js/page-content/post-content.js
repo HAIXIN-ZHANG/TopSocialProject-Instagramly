@@ -1,4 +1,10 @@
-import { getPosts, deletePost } from "../database/database.js";
+import { update } from "lodash";
+import {
+  getPosts,
+  deletePost,
+  getPostById,
+  updatePostById,
+} from "../database/database.js";
 
 // 获取容器
 const postsContainer = document.getElementById("posts-container");
@@ -40,11 +46,27 @@ export const bindContentCardButtons = async () => {
   const editPostButton = document.querySelectorAll(".post-edit-btn");
   const removePostButton = document.querySelectorAll(".post-remove-btn");
   const deletePostModal = document.getElementById("delete-post-modal");
+
+  const modal = document.getElementById("edit-post-modal");
+
+  const postText = document.getElementById("post-text");
+  const postImage = document.getElementById("post-file-image");
+
   // 绑定编辑按钮
   editPostButton.forEach((button) => {
     button.addEventListener("click", async () => {
       const postId = button.attributes["data-post-id"].value;
       console.log("Edit post", postId);
+
+      const postData = await getPostById(postId);
+      modal.style.display = "flex";
+      // inset value
+      postText.value = postData.content;
+      postImage.src = postData.image;
+      postImage.style.display = "block";
+
+      await updatePostById(postId, postData);
+      await refreshPostData();
     });
   });
 

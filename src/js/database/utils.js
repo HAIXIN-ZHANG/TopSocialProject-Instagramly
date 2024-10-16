@@ -12,6 +12,7 @@ export const getData = async (path) => {
 };
 
 export const postData = async (path, data) => {
+  console.log("postData", path, data);
   try {
     await axios.post(path, data, {
       headers: { "Content-Type": "application/json" },

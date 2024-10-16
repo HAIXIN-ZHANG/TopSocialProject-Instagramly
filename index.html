@@ -157,7 +157,7 @@
           <div id="icon-upload">
             <img src="./public/image/icon/icon-upload.png" alt="icon upload" />
           </div>
-          <input type="file" id="file-input" accept="image/*" />
+          <input type="file" id="file-input" name="avatar" />
         </div>
 
         <div class="profile-modal-input">
@@ -227,20 +227,26 @@
         </span>
 
         <div class="post-modal-description">
-          <input
+          <textarea
             type="text"
             id="post-text"
             name="post-text"
             value=""
             placeholder="What is happing?"
-          />
+          ></textarea>
         </div>
 
-        <div class="post-modal-picture">
+        <div class="post-modal-picture" id="post-drop-area">
+          <label for="post-file-input">
+            <img id="post-file-image" src="" alt="post image" />
+          </label>
+          <div id="post-modal-upload">
+            <img src="./public/image/icon/icon-upload.png" alt="icon upload" />
+          </div>
           <input
-            type="text"
-            id="post-image"
-            name="post-image"
+            type="file"
+            id="post-file-input"
+            name="post-file-input"
             value=""
             placeholder="Please upload picture"
           />

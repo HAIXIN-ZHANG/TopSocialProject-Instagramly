@@ -39,9 +39,11 @@ export const getUserPostById = async function (req, res, next) {
 
 export const postUserPost = async function (req, res, next) {
   const newUserPost = req.body;
-  if (isEmpty(newUserPost)) {
+
+  if (Object.keys(newUserPost).length === 0) {
     return res.status(400).send("UserPost is required");
   }
+
   try {
     await axios.post(USER_POSTS_API_URL, newUserPost, {
       headers: { "Content-Type": "application/json" },

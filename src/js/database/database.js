@@ -21,6 +21,23 @@ export const getPosts = async () => {
   return userPosts.data;
 };
 
+export const getPostById = async (id) => {
+  const postsPath = getResourcePath(["userPosts", id]);
+  const userPosts = await getData(postsPath);
+
+  return userPosts.data;
+};
+
+export const createPost = async (data) => {
+  const postsPath = getResourcePath(["userPosts"]);
+  await postData(postsPath, data);
+};
+
+export const updatePostById = async (id, updatedPost) => {
+  const postsPath = getResourcePath(["userPosts", id]);
+  await putData(postsPath, updatedPost);
+};
+
 export const updateProfiles = async (profileData) => {
   const profilesPath = getResourcePath(["userProfiles", "1"]);
 

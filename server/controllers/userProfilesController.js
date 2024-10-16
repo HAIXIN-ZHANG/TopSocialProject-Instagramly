@@ -39,14 +39,18 @@ export const patchUserProfileById = async function (req, res, next) {
   if (!id) {
     return res.status(400).send("Id is required");
   }
-  const updatedUserProfile = req.body;
-  console.log("updatedUserProfile backend", updatedUserProfile);
+  const userProfileData = req.body;
+
   try {
-    await axios.patch(`${USER_PROFILES_API_URL}/${id}`, updatedUserProfile, {
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await axios.patch(
+      `${USER_PROFILES_API_URL}/${id}`,
+      userProfileData,
+    );
+    const userProfile = response.data;
+
     res.status(200).json({
-      msg: "UserProfile is updated",
+      msg: "Patch UserProfile succeed",
+      data: userProfile,
     });
   } catch (error) {
     next(error);
