@@ -1,0 +1,83 @@
+.post-modal {
+  height: 537px;
+}
+
+.post-modal-description {
+  height: 116px;
+  border: solid 1px var(--color-border);
+  border-radius: var(--common-border-radius);
+  margin: 24px 0;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.post-modal-description textarea {
+  width: 100%;
+  height: 60px;
+  margin-top: 6px;
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+  border: none;
+  font-weight: 500;
+  line-height: 14px;
+  overflow: hidden;
+}
+
+.post-modal-picture {
+  height: 253px;
+  border: solid 1px var(--color-border);
+  border-radius: var(--common-border-radius);
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.post-modal-picture input {
+  width: 400px;
+  margin-top: 6px;
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+  border: none;
+  font-weight: 500;
+  position: fixed;
+  top: 340px;
+  text-align: center;
+}
+
+/* delete-post-modal */
+.delete-post-modal {
+  height: 148px;
+}
+
+.delete-post-description {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  margin: 20px 0 0 0;
+}
+
+#post-modal-upload {
+  position: fixed;
+  top: 300px;
+  left: 225px;
+  background-color: rgba(0, 0, 0, 0.45);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+#post-modal-upload img {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 11px;
+  left: 11px;
+}
+
+#post-file-image {
+  display: none; /* 隐藏图片输入框 */
+  z-index: 100;
+  width: 100%;
+}
+
+#post-file-input {
+  display: none; /* 隐藏文件输入框 */
+}

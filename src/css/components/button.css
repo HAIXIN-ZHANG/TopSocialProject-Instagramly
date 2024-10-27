@@ -1,0 +1,34 @@
+/* Button styles */
+.btn-modal-container {
+  text-align: right;
+}
+
+.btn-modal {
+  width: 77px;
+  height: 40px;
+  font-size: var(--font-size-small);
+  border: solid 1px var(--color-border);
+  cursor: pointer;
+  margin: 20px 5px;
+  border-radius: var(--common-border-radius);
+  /* Add space above buttons */
+}
+
+.btn-modal-secondary {
+  background-color: var(--color-white);
+}
+
+.btn-modal-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+button:hover {
+  opacity: 0.8;
+  /* Change opacity on hover */
+}
+
+.btn-modal-warning {
+  background-color: var(--color-warning);
+  color: var(--color-white);
+}

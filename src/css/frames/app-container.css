@@ -1,0 +1,9 @@
+.app-container {
+  text-align: center;
+  width: 1440px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: var(--color-page-background);
+  margin: 0 auto;
+  overflow: hidden;
+}

@@ -1,0 +1,28 @@
+/* --- Basic --- */
+:root {
+  /* --- common color --- */
+  --color-page-background: #fafafa;
+  --color-primary: #415be7;
+  --color-warning: #e74141;
+  --color-white: #fff;
+  --color-text: #080a25;
+  --color-text-light: #4d4f5e;
+  --color-text-label: #8689a3;
+  --color-modal-background: rgba(36, 37, 46, 0.5);
+  --color-border: #cdd0d7;
+  --color-border-post: #e3e5e7;
+
+  /* --- font size --- */
+  --font-size-xxlarge: 24px;
+  --font-size-xlarge: 20px;
+  --font-size-medium: 16px;
+  --font-size-small: 14px;
+  --font-size-xsmall: 12px;
+
+  /* --- radius --- */
+  --common-border-radius: 4px;
+  --btn-border-radius: 4px;
+
+  font-size: 14px;
+  font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
+}

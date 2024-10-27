@@ -1,0 +1,100 @@
+.profile-modal {
+  height: 972px;
+}
+
+/* Close button styles */
+.close {
+  cursor: pointer;
+  color: #aaa;
+  width: 10px;
+  height: 10px;
+  float: right;
+  /* Position close button to the right */
+}
+
+.close:hover {
+  color: black;
+  /* Change color on hover */
+}
+
+.close img {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content-title {
+  font-size: var(--font-size-medium);
+  font-weight: bold;
+}
+
+.profile-modal-input {
+  box-sizing: border-box;
+  height: 54px;
+  border: solid 1px var(--color-border);
+  margin-top: 20px;
+  border-radius: var(--common-border-radius);
+  background-color: var(--color-white);
+  padding: 6px 12px 0 12px;
+}
+
+.profile-modal-input-introduction {
+  height: 116px;
+  box-sizing: border-box;
+}
+
+/* Input styles */
+.profile-modal-input label {
+  font-size: var(--font-size-xsmall);
+  color: var(--color-text-label);
+  width: 100%;
+  line-height: 12px;
+}
+
+.profile-modal-input input {
+  margin-top: 6px;
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+  border: none;
+  font-weight: 500;
+  width: 100%;
+  line-height: 14px;
+  overflow: hidden;
+}
+
+#profile-introduction {
+  margin-top: 6px;
+  width: 100%;
+  height: 60px;
+  border: none;
+  overflow: scroll;
+}
+
+.profile-modal-avatar {
+  text-align: center;
+}
+
+#upload-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+#icon-upload {
+  position: fixed;
+  top: 60px;
+  left: 225px;
+  background-color: rgba(0, 0, 0, 0.45);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+#icon-upload img {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 11px;
+}
+#file-input {
+  display: none; /* 隐藏文件输入框 */
+}

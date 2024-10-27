@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Top Social Website" />
+    <meta
+      name="keywords"
+      content="Top Social, boys, girls, funny stories, data analytics"
+    />
+    <meta name="author" content="Jason" />
+
+    <title>Top Social Instagramly</title>
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="index.js"></script>
+  </head>
+
+  <body>
+    <div id="app" class="app-container">
+      <!-- 左侧个人信息 -->
+      <div class="profile-sidebar">
+        <div class="web-logo">
+          <img src="./public/image/web-logo/logo.png" alt="web-logo" />
+        </div>
+        <div class="profile-infomation">
+          <!-- header -->
+          <div class="profile-header">
+            <img
+              id="profile-avatar"
+              class="profile-avatar"
+              src="./public/image/profile/profile_12.png"
+              alt="Avatar"
+            />
+            <div class="profile-identify">
+              <p class="profile-name" id="profile-name"></p>
+              <p class="profile-email" id="profile-email"></p>
+            </div>
+          </div>
+          <!-- description -->
+          <p class="profile-description" id="profile-description"></p>
+
+          <!-- media items -->
+          <div class="profile-media">
+            <div class="profile-media-item">
+              <span class="profile-media-icon">
+                <img
+                  src="./public/image/icon/icon-constellation.png"
+                  alt="icon-constellation"
+                />
+              </span>
+              <span class="profile-media-name">Constellation</span>
+              <span
+                id="profile-constellation"
+                class="profile-media-value"
+              ></span>
+            </div>
+
+            <div class="profile-media-item">
+              <span class="profile-media-icon">
+                <img src="./public/image/icon/icon-MBTI.png" alt="icon-MBTI" />
+              </span>
+              <span class="profile-media-name">MBTI</span>
+              <span id="profile-mbti" class="profile-media-value"></span>
+            </div>
+
+            <div class="profile-media-item">
+              <span class="profile-media-icon">
+                <img
+                  src="./public/image/icon/icon-hobby.png"
+                  alt="icon-hobby"
+                />
+              </span>
+              <span class="profile-media-name">Hobby</span>
+              <span id="profile-hobby" class="profile-media-value"></span>
+            </div>
+
+            <div class="profile-media-item">
+              <span class="profile-media-icon">
+                <img
+                  src="./public/image/icon/icon-linked.png"
+                  alt="icon-linkedin"
+                />
+              </span>
+              <span class="profile-media-name">Linked</span>
+              <span id="profile-linked" class="profile-media-value"></span>
+            </div>
+
+            <div class="profile-media-item">
+              <span class="profile-media-icon">
+                <img src="./public/image/icon/icon-X.png" alt="icon-X" />
+              </span>
+              <span class="profile-media-name">X</span>
+              <span id="profile-x" class="profile-media-value"></span>
+            </div>
+
+            <div class="profile-media-item">
+              <span class="profile-media-icon">
+                <img
+                  src="./public/image/icon/icon-weChat.png"
+                  alt="icon-weChat"
+                />
+              </span>
+              <span class="profile-media-name">WeChat</span>
+              <span id="profile-weChat" class="profile-media-value"></span>
+            </div>
+          </div>
+
+          <!-- buttons -->
+          <button class="btn-edit-profile btn-profile" id="edit-profile-btn">
+            Edit Profile
+          </button>
+          <button class="btn-create-post btn-profile" id="edit-post-btn">
+            Create Post
+          </button>
+        </div>
+      </div>
+
+      <!-- 中间帖子部分 -->
+      <div class="main-content">
+        <div class="content-tab">
+          <img src="./public/image/icon/icon-house.png" alt="icon-house" />
+          <span>Home</span>
+        </div>
+        <div class="content-post" id="posts-container"></div>
+      </div>
+      <!-- 右侧广告部分 -->
+      <div class="advertisement-sidebar">
+        <div class="advertisement-item">
+          <img
+            src="./public/image/advertisement/ads-space.png"
+            alt="advertisement"
+          />
+        </div>
+        <div class="advertisement-item">
+          <img
+            src="./public/image/advertisement/ads-instagramly.png"
+            alt="advertisement"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- 编辑个人信息弹窗 -->
+    <div id="edit-profile-modal" class="modal">
+      <div class="modal-content profile-modal">
+        <span class="modal-content-title">Edit Profile</span>
+        <span class="close" id="edit-profile-close">
+          <img src="./public/image/icon/icon-close.png" alt="icon-close" />
+        </span>
+
+        <div class="profile-modal-avatar" id="drop-area">
+          <label for="file-input">
+            <img id="upload-avatar" src="" alt="upload avatar" />
+          </label>
+          <div id="icon-upload">
+            <img src="./public/image/icon/icon-upload.png" alt="icon upload" />
+          </div>
+          <input type="file" id="file-input" name="avatar" />
+        </div>
+
+        <div class="profile-modal-input">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" value="" />
+        </div>
+        <div class="profile-modal-input">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" value="" />
+        </div>
+        <div class="profile-modal-input">
+          <label for="constellation">Constellation</label>
+          <input type="text" id="constellation" name="constellation" value="" />
+        </div>
+        <div class="profile-modal-input">
+          <label for="MBTI">MBTI</label>
+          <input type="text" id="MBTI" name="MBTI" value="" />
+        </div>
+        <div class="profile-modal-input">
+          <label for="hobby">Hobby</label>
+          <input type="text" id="hobby" name="hobby" value="" />
+        </div>
+        <div class="profile-modal-input">
+          <label for="name">Linked</label>
+          <input type="linked" id="linked" name="linked" value="" />
+        </div>
+        <div class="profile-modal-input">
+          <label for="X">X</label>
+          <input type="text" id="x" name="x" value="" />
+        </div>
+        <div class="profile-modal-input">
+          <label for="weChat">WeChat</label>
+          <input type="text" id="weChat" name="weChat" value="" />
+        </div>
+        <div class="profile-modal-input profile-modal-input-introduction">
+          <label for="profile-introduction">Profile Introduction</label>
+          <textarea
+            type="text"
+            id="profile-introduction"
+            name="profile-introduction"
+          ></textarea>
+        </div>
+        <div class="btn-modal-container">
+          <button
+            class="btn-modal btn-modal-secondary"
+            id="edit-profile-cancel"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn-modal btn-modal-primary"
+            id="edit-profile-save"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 创建一条动态 -->
+    <div id="edit-post-modal" class="modal">
+      <div class="modal-content post-modal">
+        <span class="modal-content-title" id="post-modal-title"
+          >Create Post</span
+        >
+        <span class="close" id="edit-post-close">
+          <img src="./public/image/icon/icon-close.png" alt="icon-close" />
+        </span>
+
+        <div class="post-modal-description">
+          <textarea
+            type="text"
+            id="post-text"
+            name="post-text"
+            value=""
+            placeholder="What is happing?"
+          ></textarea>
+        </div>
+
+        <div class="post-modal-picture" id="post-drop-area">
+          <label for="post-file-input">
+            <img id="post-file-image" src="" alt="post image" />
+          </label>
+          <div id="post-modal-upload">
+            <img src="./public/image/icon/icon-upload.png" alt="icon upload" />
+          </div>
+          <input
+            type="file"
+            id="post-file-input"
+            name="post-file-input"
+            value=""
+            placeholder="Please upload picture"
+          />
+        </div>
+
+        <div class="btn-modal-container">
+          <button class="btn-modal btn-modal-secondary" id="edit-post-cancel">
+            Cancel
+          </button>
+          <button
+            class="btn-modal btn-modal-primary"
+            id="edit-post-post"
+            type="submit"
+          >
+            Post
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 删除一条动态-->
+    <div id="delete-post-modal" class="modal">
+      <div class="modal-content delete-post-modal">
+        <span class="modal-content-title">Delete Post</span>
+        <span class="close" id="delete-post-close">
+          <img src="./public/image/icon/icon-close.png" alt="icon-close" />
+        </span>
+
+        <p class="delete-post-description">Are you sure to delete this post?</p>
+
+        <div class="btn-modal-container">
+          <button class="btn-modal btn-modal-secondary" id="delete-post-cancel">
+            Cancel
+          </button>
+          <button
+            class="btn-modal btn-modal-warning"
+            id="delete-post-delete"
+            type="submit"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
