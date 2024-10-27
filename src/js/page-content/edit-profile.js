@@ -114,7 +114,9 @@ export const bindEditProfile = async () => {
 
     await updateProfiles(updatedProfile);
 
-    await refreshProfileSidebarData();
+    setTimeout(() => {
+      location.reload();
+    }, 500); // 延迟 0.5 秒
   });
 
   // 点击取消按钮时隐藏弹窗
@@ -133,7 +135,7 @@ export const bindUploadAvatar = () => {
       console.log(`已选择文件: ${files[0].name}`);
       const objectURL = URL.createObjectURL(files[0]);
       uploadAvatar.src = objectURL;
-      uploadAvatar.onload = () => URL.revokeObjectURL(objectURL);  // 加载后释放 URL
+      uploadAvatar.onload = () => URL.revokeObjectURL(objectURL); // 加载后释放 URL
     }
   });
 };

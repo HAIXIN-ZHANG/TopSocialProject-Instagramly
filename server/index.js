@@ -12,7 +12,6 @@ const app = express();
 app.use(bodyParser.json({ limit: "5mb" })); // 例如，10MB
 app.use(bodyParser.urlencoded({ limit: "5mb", extended: true }));
 
-
 app.use(cors());
 app.use(express.json());
 
@@ -22,5 +21,5 @@ app.use(handleErrors);
 
 const PORT = 8001;
 app.listen(PORT, function () {
-	console.log("Server is running on http://localhost:8001");
+  console.log("Server is running on http://localhost:8001");
 });

@@ -12,25 +12,21 @@ git clone [COPY_GIT_URL]
 
 2. Install dependencies flow the steps below:
 
-### frontend
+```
+cd [your_project_folder]
+```
 
 ```
-cd frontend
-
 npm install
+```
 
+### start the project
+
+```
 npm run dev
 ```
 
-### backend
-
-```
-cd backend
-
-npm install
-
-npm run json:server
-```
-
-Project will be running on `http://localhost:8080/`
+Frontend will be running on `http://localhost:8080/`
+Backend will be running on `http://localhost:8001/`
+JSON server will be running on `http://localhost:8000/`
 ![alt text](frontend/public/image/overview/project-overview.jpg)
