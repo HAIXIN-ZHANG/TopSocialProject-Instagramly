@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const USER_POSTS_API_URL = "http://localhost:8000/userPosts";
+const USER_POSTS_API_URL = "http://localhost:3000/userPosts";
 
 export const getUserPosts = async function (req, res, next) {
   try {

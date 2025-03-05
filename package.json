@@ -8,7 +8,7 @@
     "dev": "concurrently vite \"npm run server\" \"npm run json:server\"",
     "build": "vite build",
     "preview": "vite preview",
-    "json:server": "json-server --port 8000 --watch db.json",
+    "json:server": "json-server --port 3000 --watch db.json",
     "server": "nodemon server/index.js",
     "dev:server": "concurrently \"npm run server\" \"npm run json:server\""
   },

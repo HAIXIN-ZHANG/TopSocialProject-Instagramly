@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const USER_PROFILES_API_URL = "http://localhost:8000/userProfiles";
+const USER_PROFILES_API_URL = "http://localhost:3000/userProfiles";
 
 export const getUserProfileById = async function (req, res, next) {
   console.log("userPosts", req.params.userId);

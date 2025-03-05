@@ -1,5 +1,8 @@
 .profile-modal {
   height: 972px;
+
+  /* height: 646px;
+  overflow: auto; */
 }
 
 /* Close button styles */
