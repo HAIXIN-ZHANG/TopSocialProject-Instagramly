@@ -1,6 +1,6 @@
 import { createPost, updatePostById } from "../database/database.js";
 import { convertToBase64 } from "../base64Utils.js";
-import { refreshPostData } from "./post-content.js";
+// import { refreshPostData } from "./post-content.js";
 
 export const bindEditPost = async () => {
   // 获取 HTML 元素
