@@ -13,8 +13,6 @@
 @import "./src/css/frames/main-content.css";
 @import "./src/css/frames/advertisement-sidebar.css";
 
-/* --- Components --- */
-
 /* --- Modals --- */
 @import "./src/css/frames/profile-modal.css";
 @import "./src/css/frames/post-modal.css";
